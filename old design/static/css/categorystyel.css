@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: black;
+  height: 50px;
+  color: white;
+  font-size: 1.3em;
+}
+.navbar i {
+  padding-left: 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+body {
+  background: #2c2a2a;
+}
+
+.MenuDetails {
+  background-image: url(/assets/blurbackground.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 60vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.MenuDetails .name {
+  font-size: 3em;
+  color: white;
+  width: fit-content;
+  border-radius: 20px;
+  letter-spacing: 3;
+  padding-bottom: 100px;
+}
+.MenuDetails img {
+  max-width: 50%;
+  /* box-shadow: 1px 1px 5px 5px black; */
+  background-color: #2c2a2a8e;
+  padding: 1em;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.category-section {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-bottom: red 5px solid;
+}
+.category-section h2 {
+  padding: 2em;
+  letter-spacing: 5;
+  background-color: rgb(111, 111, 111);
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+.wrapper {
+  color: white;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.item {
+  max-width: 400px;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden; /* Ensure blur stays inside corners */
+  z-index: 0; /* Base layer */
+}
+
+/* Background layer: blurred + darkened image */
+.item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(/assets/13.jpeg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.5); /* Blur + slight dark */
+  z-index: -1; /* Put behind content */
+}
+.imagesection {
+  width: 100%;
+}
+.imagesection img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+}
+.prodcut-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.prodcut-name {
+}
+.prodcut-name p {
+  color: rgba(255, 255, 255, 0.625);
+}
+.dot {
+}
+.money {
+}
+.price {
+  margin: 5px;
+  font-weight: 900;
+  font-size: 20px;
+}
+.price button {
+  padding: 5px;
+  background-color: yellow;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.qty {
+  display: flex;
+}
+.fa {
+}
+.fa-plus {
+}
+.many {
+}
+.fa-minus {
+}
+
+/* Start Shoopingcart field */
+.shoopingcart {
+  position: sticky;
+  background-color: #00000076;
+  backdrop-filter: blur(10px);
+  padding: 2em;
+  color: white;
+  z-index: 10000;
+  display: none;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.shoopingcart {
+  /* display: none; */
+}
+.row {
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
+.note {
+  display: flex;
+  flex-direction: column;
+}
+.phone-class {
+  text-align: left;
+}
+.whats-button {
+  margin: 50px 35%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+}
+
+table {
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.2em;
+  background: rgba(0, 0, 0, 0.522);
+}
+thead {
+  box-shadow: 0 4px 3px -3px rgb(165, 165, 165);
+}
+td,
+th {
+  text-align: right;
+}
+td,
+th {
+  /* border: white 1px solid; */
+  padding: 1em;
+}
+tr:nth-child(even) {
+  background-color: rgb(66, 66, 66);
+}
+td:nth-child(2),
+th:nth-child(2) {
+  color: rgb(255, 230, 0);
+}
+td:nth-child(4),
+th:nth-child(4) {
+  color: rgb(0, 255, 98);
+}
+td:nth-child(4) {
+  background-color: rgb(105, 105, 159);
+}
+/* end Style */
