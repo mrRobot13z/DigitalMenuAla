@@ -1,0 +1,332 @@
+:root {
+  --main-color: #d00095;
+  --text-color: #333;
+  --bg-color: #f5f5f5;
+  --second-color: rgba(0, 0, 0, 0.583);
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Rubik", sans-serif; */
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #cececeee;
+  color: black;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: white;
+  padding: 0;
+  padding-bottom: 40px;
+}
+.header {
+  height: 200px;
+  overflow: hidden;
+}
+.header .image {
+  background-image: url(/assets/blurbackground.jpeg);
+  background-size: contain;
+  background-position: 50%;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  background-color: var(--second-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  height: 100px;
+  width: auto;
+  z-index: 2;
+}
+
+.place-headder-info {
+  background-color: white;
+  margin-top: -25px;
+  border-radius: 20px 20px 0 0;
+  padding: 1rem 0.5rem;
+}
+.place-title {
+  font-weight: 400;
+  padding: 1rem 0.5rem 0 4px;
+}
+.place-info {
+  padding: 10px;
+}
+.main-info {
+  color: rgba(0, 0, 0, 0.617);
+}
+.row {
+  padding-bottom: 1rem;
+}
+.row i {
+  padding-left: 0.5rem;
+}
+.main-info a {
+  color: rgba(0, 0, 0, 0.617);
+  text-decoration: none;
+}
+.page-name * {
+  background-color: var(--main-color);
+  width: fit-content;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  padding: 0.8rem;
+  color: white;
+  border-radius: 2rem;
+}
+
+.categories-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.category {
+  width: 90%;
+  height: 200px;
+}
+.category-logo {
+  position: absolute;
+  width: 60px;
+
+  /* opacity: 0.3; */
+  left: 10px;
+  top: 10px;
+  background-color: #0000008b;
+  padding: 0.5rem;
+  border-radius: 50%;
+
+  z-index: 3;
+}
+.category a {
+  position: relative;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* background: url(/assets/blurbackground.jpeg); */
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-decoration: none;
+  overflow: hidden; /* مهم حتى لا يظهر ::before خارج a */
+}
+.dividor {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px;
+  height: 5px;
+  background-color: #dedede;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px 0 rgb(233, 233, 233);
+}
+.dividor hr {
+  background-color: white;
+  color: white;
+}
+.category a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* حجم الـ before داخل a */
+  height: 100%;
+  background: #252525;
+  opacity: 0.2;
+  border-radius: 26px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.category a h2 {
+  z-index: 2; /* نضمن النص فوق الـ before */
+  position: relative;
+  background-color: #2525256f;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+#shopping-cart {
+  position: fixed;
+  inset: 1;
+  top: 0;
+  height: 100%;
+  z-index: 9998;
+  overflow-y: auto;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: stretch;
+}
+.cart-button {
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  justify-self: stretch;
+  /* max-width: 500px;
+  min-width: 300px; */
+  min-width: 100vw;
+  max-width: 500px;
+  right: 50%;
+  transform: translate(50%);
+}
+button#show-cart {
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem 1rem 0 0;
+  border: none;
+  width: 100%;
+}
+#show-cart i {
+  padding-right: 15px;
+}
+.item-cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+.cart-items {
+  border-bottom: 1px solid rgb(216, 216, 216);
+  margin: 0;
+}
+.item-cart-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.item-cart-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-number {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cart-items button.minus {
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  padding-left: 10px;
+}
+.cart-items button.plus {
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  padding-right: 10px;
+}
+
+.item-qty {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.cart-total {
+  padding: 1rem;
+}
+.cart-total span {
+  padding-right: 1rem;
+}
+/* Customer information */
+.customer-info .row,
+.address,
+.note {
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.address label,
+.note label {
+  margin-bottom: 10px;
+}
+.whatsapp-button {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+}
+button.whatsapp {
+  margin: 0 auto;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(0, 176, 68);
+  color: white;
+}
+.hide-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.hide-button button {
+  /* background-color: #d00095; */
+  color: var(--main-color);
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hide-button button i {
+  margin: 0;
+  padding: 0;
+}
+.cart-badge {
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-item-header button {
+  border: none;
+  font-weight: 700;
+  color: red;
+  background: none;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
